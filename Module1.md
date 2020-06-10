@@ -167,4 +167,136 @@ Another example:
 - examples:
   - predicting the sales amounts of new products based on advertising expenditure
   - predicting wind velocities as a function of temperature, humidity, air pressure, etc.
-  - time series prediction of stock market indicies
+  - time series prediction of stock market indices
+
+
+
+## Clustering
+
+- A data set containing a set of attributes is given
+
+- Goal: find clusters such that:
+
+  - the data points in one cluster are the most similar
+  - the data points in separate clusters are the most dissimilar
+
+- a measure that is able to compute the similarity between two data points is given
+
+- similarity measures:
+
+  - **Euclidean distance**
+
+    - intracluster distance minimized
+    - intercluster distances are maximized
+
+  - other problem-specific measures
+
+    
+
+### Clustering Applications
+
+- goal: group documents based on their subject similarity
+
+- approach:
+
+  - find frequently occurring terms in each document
+  - use a similarity measure to find how similar the documents are based on their frequent terms
+
+- example
+
+  - 3204 Articles of LA Times
+
+  - similarity measure: common words in the documents
+
+    - | category  | total articles | correctly placed |
+      | --------- | -------------- | ---------------- |
+      | financial | 555            | 364              |
+      | foreign   | 341            | 260              |
+      | national  | 273            | 36               |
+
+  - perfect clustering is not always possible
+
+    
+
+## Association rule analysis
+
+- A data set contains a set of records, each record contains some number of items
+
+- goal: generate a set of dependency rules which will predict occurrence of an item based on occurrences of other items
+
+- example
+
+  | TID  | ITEMS                     |
+  | ---- | ------------------------- |
+  | 1    | bread, coke, milk         |
+  | 2    | bread, beer               |
+  | 3    | beer, coke, diaper, milk  |
+  | 4    | beer, bread, diaper, milk |
+  | 5    | coke, diaper, milk        |
+
+  - **Rules discovered:**
+
+    - {milk} -> {coke} (3/4 occurrences)
+
+    - {diaper, milk} -> {beer} (2/3 occurrences)
+
+      
+
+### Applications
+
+- Marketing and sales promotion
+  - assume that {diaper, milk} -> {beer} rule is discovered
+  - **consequent**: can be used to determine what should be done to increase its sale
+  - **antecedent**: shows which products would be affected if the store stops selling them
+  - **consequent and antecedent:** which products should be sold together to boost the sale of the item in the consequent
+
+- supermarket shelf management
+  - goal: organize the shelves by placing the items that are bought together by sufficiently many customers
+
+
+
+## Deviation/Anomaly Detection
+
+- detect significant deviations from normal behavior
+- goal: avoid labeling a normal behavior as anomalous
+- applications:
+  - credit card fraud detection
+  - network intrusion detection
+  - unusual pattern of disease
+
+
+
+## Data Mining Challenges
+
+- **Scalability**
+
+  Data is generated very fast, and in huge quantities. You don't generally want to wait hours or days for your algorithms to run. We can use various strategies to improve our scalability.
+
+- **Dimensionality**
+
+  It's very common to work with data sets with huge numbers of attributes.
+
+- **Complex and Heterogenous Data**
+
+  In the case of working with the web, we can have images, text, video, audio, etc.
+
+- **data quality**
+
+  Sometimes data sets are full of outliers, and needs to be cleaned.
+
+- **Data ownership and distribution**
+
+  Data access is sometimes an issue. We may have to consider communication costs and privacy issues.
+
+- **Privacy preservation / Ethical issue**
+
+  Data mining has huge ethical consequences. It can be (wrongly) used for:
+
+  - **discrimination**
+    - highly unethical and illegal to discriminate based on race, gender, or religion
+  - **reidentification**
+    - most people can be identified with just a few simple data points (birth date, sex, city, etc.)
+  - **personal information**
+    - how it is used, what it is used for, how confident it remains
+    - should be expressed in **plain language**
+
